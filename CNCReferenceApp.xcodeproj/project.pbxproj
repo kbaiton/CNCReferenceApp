@@ -124,6 +124,7 @@
 		01E77DB71F25714200ED1EFA /* CNCReferenceApp */ = {
 			isa = PBXGroup;
 			children = (
+				01E77DF71F257ABC00ED1EFA /* Models */,
 				01E77DEA1F2572FD00ED1EFA /* Saved Profiles View */,
 				01E77DE91F2572E800ED1EFA /* GCode Reference View */,
 				01E77DE81F2572D000ED1EFA /* Calculator View */,
@@ -179,6 +180,13 @@
 				01E77DF11F25758200ED1EFA /* SavedProfilesStoryboard.storyboard */,
 			);
 			name = "Saved Profiles View";
+			sourceTree = "<group>";
+		};
+		01E77DF71F257ABC00ED1EFA /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 		3FE1275E0E5A44E286641A77 /* Pods */ = {
