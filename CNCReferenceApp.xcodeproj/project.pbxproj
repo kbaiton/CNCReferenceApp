@@ -15,6 +15,9 @@
 		01E77DC51F25714200ED1EFA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01E77DC31F25714200ED1EFA /* LaunchScreen.storyboard */; };
 		01E77DD01F25714200ED1EFA /* CNCReferenceAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E77DCF1F25714200ED1EFA /* CNCReferenceAppTests.swift */; };
 		01E77DDB1F25714200ED1EFA /* CNCReferenceAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E77DDA1F25714200ED1EFA /* CNCReferenceAppUITests.swift */; };
+		01E77DEC1F2573BA00ED1EFA /* SavedProfilesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E77DEB1F2573BA00ED1EFA /* SavedProfilesViewController.swift */; };
+		01E77DEE1F2573D300ED1EFA /* GCodeReferenceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E77DED1F2573D300ED1EFA /* GCodeReferenceViewController.swift */; };
+		01E77DF01F2573F100ED1EFA /* CalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E77DEF1F2573F100ED1EFA /* CalculatorViewController.swift */; };
 		3AB37FC8DDF7FA5F51E87A82 /* Pods_CNCReferenceAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13DE49ADCCFC1BD8ACCFC878 /* Pods_CNCReferenceAppUITests.framework */; };
 		976C8F4D4859F00BCD29B2EE /* Pods_CNCReferenceAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9CC1D0DE1279DF8515E8AEF /* Pods_CNCReferenceAppTests.framework */; };
 		E27F2C650A5EAB67318B1A09 /* Pods_CNCReferenceApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D45FFF0C4853E2E2FF12653F /* Pods_CNCReferenceApp.framework */; };
@@ -52,6 +55,9 @@
 		01E77DD61F25714200ED1EFA /* CNCReferenceAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CNCReferenceAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		01E77DDA1F25714200ED1EFA /* CNCReferenceAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CNCReferenceAppUITests.swift; sourceTree = "<group>"; };
 		01E77DDC1F25714200ED1EFA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		01E77DEB1F2573BA00ED1EFA /* SavedProfilesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SavedProfilesViewController.swift; sourceTree = "<group>"; };
+		01E77DED1F2573D300ED1EFA /* GCodeReferenceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GCodeReferenceViewController.swift; sourceTree = "<group>"; };
+		01E77DEF1F2573F100ED1EFA /* CalculatorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalculatorViewController.swift; sourceTree = "<group>"; };
 		13DE49ADCCFC1BD8ACCFC878 /* Pods_CNCReferenceAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CNCReferenceAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FA588AC53CBE1CE7366155F /* Pods-CNCReferenceApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CNCReferenceApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CNCReferenceApp/Pods-CNCReferenceApp.debug.xcconfig"; sourceTree = "<group>"; };
 		836A64CDD17335E9640EF5E4 /* Pods-CNCReferenceApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CNCReferenceApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-CNCReferenceApp/Pods-CNCReferenceApp.release.xcconfig"; sourceTree = "<group>"; };
@@ -116,6 +122,9 @@
 		01E77DB71F25714200ED1EFA /* CNCReferenceApp */ = {
 			isa = PBXGroup;
 			children = (
+				01E77DEA1F2572FD00ED1EFA /* Saved Profiles View */,
+				01E77DE91F2572E800ED1EFA /* GCode Reference View */,
+				01E77DE81F2572D000ED1EFA /* Calculator View */,
 				01E77DB81F25714200ED1EFA /* AppDelegate.swift */,
 				01E77DBA1F25714200ED1EFA /* FirstViewController.swift */,
 				01E77DBC1F25714200ED1EFA /* SecondViewController.swift */,
@@ -143,6 +152,30 @@
 				01E77DDC1F25714200ED1EFA /* Info.plist */,
 			);
 			path = CNCReferenceAppUITests;
+			sourceTree = "<group>";
+		};
+		01E77DE81F2572D000ED1EFA /* Calculator View */ = {
+			isa = PBXGroup;
+			children = (
+				01E77DEF1F2573F100ED1EFA /* CalculatorViewController.swift */,
+			);
+			name = "Calculator View";
+			sourceTree = "<group>";
+		};
+		01E77DE91F2572E800ED1EFA /* GCode Reference View */ = {
+			isa = PBXGroup;
+			children = (
+				01E77DED1F2573D300ED1EFA /* GCodeReferenceViewController.swift */,
+			);
+			name = "GCode Reference View";
+			sourceTree = "<group>";
+		};
+		01E77DEA1F2572FD00ED1EFA /* Saved Profiles View */ = {
+			isa = PBXGroup;
+			children = (
+				01E77DEB1F2573BA00ED1EFA /* SavedProfilesViewController.swift */,
+			);
+			name = "Saved Profiles View";
 			sourceTree = "<group>";
 		};
 		3FE1275E0E5A44E286641A77 /* Pods */ = {
@@ -451,7 +484,10 @@
 			files = (
 				01E77DBD1F25714200ED1EFA /* SecondViewController.swift in Sources */,
 				01E77DB91F25714200ED1EFA /* AppDelegate.swift in Sources */,
+				01E77DEC1F2573BA00ED1EFA /* SavedProfilesViewController.swift in Sources */,
 				01E77DBB1F25714200ED1EFA /* FirstViewController.swift in Sources */,
+				01E77DF01F2573F100ED1EFA /* CalculatorViewController.swift in Sources */,
+				01E77DEE1F2573D300ED1EFA /* GCodeReferenceViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -704,6 +740,7 @@
 				01E77DE11F25714200ED1EFA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		01E77DE21F25714200ED1EFA /* Build configuration list for PBXNativeTarget "CNCReferenceAppTests" */ = {
 			isa = XCConfigurationList;
@@ -712,6 +749,7 @@
 				01E77DE41F25714200ED1EFA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		01E77DE51F25714200ED1EFA /* Build configuration list for PBXNativeTarget "CNCReferenceAppUITests" */ = {
 			isa = XCConfigurationList;
@@ -720,6 +758,7 @@
 				01E77DE71F25714200ED1EFA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
