@@ -1,0 +1,6 @@
+framework module Pods_CNCReferenceAppTests {
+  umbrella header "Pods-CNCReferenceAppTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
