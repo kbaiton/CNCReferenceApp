@@ -105,6 +105,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		014F79F31F2E85C600312C4C /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				014F79F11F2E7B0100312C4C /* UITextFieldExtensions.swift */,
+			);
+			name = Utilities;
+			sourceTree = "<group>";
+		};
 		01E77DAC1F25714200ED1EFA = {
 			isa = PBXGroup;
 			children = (
@@ -130,10 +138,11 @@
 		01E77DB71F25714200ED1EFA /* CNCReferenceApp */ = {
 			isa = PBXGroup;
 			children = (
-				01E77DF71F257ABC00ED1EFA /* Models */,
+				01E77DE81F2572D000ED1EFA /* Calculator View */,
 				01E77DEA1F2572FD00ED1EFA /* Saved Profiles View */,
 				01E77DE91F2572E800ED1EFA /* GCode Reference View */,
-				01E77DE81F2572D000ED1EFA /* Calculator View */,
+				014F79F31F2E85C600312C4C /* Utilities */,
+				01E77DF71F257ABC00ED1EFA /* Models */,
 				01E77DB81F25714200ED1EFA /* AppDelegate.swift */,
 				01E77DBE1F25714200ED1EFA /* Main.storyboard */,
 				01E77DC11F25714200ED1EFA /* Assets.xcassets */,
@@ -165,10 +174,9 @@
 			isa = PBXGroup;
 			children = (
 				01E77DF51F2575AF00ED1EFA /* CalculatorStoryboard.storyboard */,
-				01E77DEF1F2573F100ED1EFA /* CalculatorViewController.swift */,
 				014F79ED1F2E431C00312C4C /* CalculatorViewModel.swift */,
+				01E77DEF1F2573F100ED1EFA /* CalculatorViewController.swift */,
 				014F79EF1F2E466000312C4C /* CalculatorTableViewCell.swift */,
-				014F79F11F2E7B0100312C4C /* UITextFieldExtensions.swift */,
 			);
 			name = "Calculator View";
 			sourceTree = "<group>";
