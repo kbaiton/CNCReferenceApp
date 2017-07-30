@@ -58,6 +58,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="inputField" destination="3At-Xm-C2v" id="HLZ-oG-9sf"/>
                                             <outlet property="titleLabel" destination="Zfg-Pm-WGq" id="lMG-bV-y0h"/>
                                         </connections>
                                     </tableViewCell>

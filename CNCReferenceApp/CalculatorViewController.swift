@@ -24,6 +24,7 @@ class CalculatorViewController: UIViewController {
         self.viewModel.cellTypes.bind(to: self.calculatorTableView) { (cellTypes, indexPath, tableView) -> UITableViewCell in
             let cell = tableView.dequeueReusableCell(withIdentifier: "CalculatorCell") as! CalculatorTableViewCell
             cell.initWith(cellType: cellTypes[indexPath.row])
+            cell.inputField.delegate = self
             return cell
         }
     }
@@ -45,4 +46,21 @@ extension CalculatorViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         //do something with selected row
     }
+}
+
+extension CalculatorViewController: UITextFieldDelegate {
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        let result = (textField.text as NSString?)?.replacingCharacters(in: range, with: string) ?? string
+        
+        let numberFormatter = NumberFormatter()
+        numberFormatter.numberStyle = .decimal
+        if numberFormatter.number(from: result) != nil {
+            return true
+        } else {
+            return false
+        }
+    }
+    
+    
 }
