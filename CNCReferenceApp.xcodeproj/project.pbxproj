@@ -298,6 +298,7 @@
 				TargetAttributes = {
 					01E77DB41F25714200ED1EFA = {
 						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = 4384X88AAP;
 						ProvisioningStyle = Automatic;
 					};
 					01E77DCA1F25714200ED1EFA = {
@@ -666,6 +667,7 @@
 			baseConfigurationReference = 1FA588AC53CBE1CE7366155F /* Pods-CNCReferenceApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 4384X88AAP;
 				INFOPLIST_FILE = CNCReferenceApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.KaleBaiton.CNCReferenceApp;
@@ -679,6 +681,7 @@
 			baseConfigurationReference = 836A64CDD17335E9640EF5E4 /* Pods-CNCReferenceApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 4384X88AAP;
 				INFOPLIST_FILE = CNCReferenceApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.KaleBaiton.CNCReferenceApp;
