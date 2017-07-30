@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="gIk-jo-12f">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="gIk-jo-12f">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -35,7 +35,7 @@
                             <constraint firstAttribute="centerX" secondItem="D0L-ZO-PMJ" secondAttribute="centerX" id="uwm-g0-74C"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Second" image="second" id="dG5-1R-wUd"/>
+                    <tabBarItem key="tabBarItem" title="Calculator" image="second" id="dG5-1R-wUd"/>
                     <navigationItem key="navigationItem" title="Calculator" id="69H-dY-oEP"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oOC-kC-WOu" sceneMemberID="firstResponder"/>

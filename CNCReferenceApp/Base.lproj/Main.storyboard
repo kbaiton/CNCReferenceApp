@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -13,7 +13,7 @@
         <scene sceneID="Ivk-v2-oAz">
             <objects>
                 <viewControllerPlaceholder storyboardName="SavedProfilesStoryboard" id="WiG-nL-kLm" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="CZw-gm-xjJ"/>
+                    <tabBarItem key="tabBarItem" title="Profiles" id="CZw-gm-xjJ"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J75-Fd-WuY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -23,7 +23,7 @@
         <scene sceneID="nA9-h3-vpa">
             <objects>
                 <viewControllerPlaceholder storyboardName="CalculatorStoryboard" id="Qej-k3-zQS" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="mSt-P5-ycv"/>
+                    <tabBarItem key="tabBarItem" title="Calculator" id="mSt-P5-ycv"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="D0h-HI-JxK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -33,7 +33,7 @@
         <scene sceneID="tH4-uj-SQx">
             <objects>
                 <viewControllerPlaceholder storyboardName="GCodeReferenceStoryboard" id="hPH-AX-Kce" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="Rb8-el-Og1"/>
+                    <tabBarItem key="tabBarItem" title="G Code" id="Rb8-el-Og1"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Txb-Zf-UfU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -51,8 +51,8 @@
                     </tabBar>
                     <connections>
                         <segue destination="Qej-k3-zQS" kind="relationship" relationship="viewControllers" id="fK3-jc-uGm"/>
-                        <segue destination="hPH-AX-Kce" kind="relationship" relationship="viewControllers" id="ljp-ah-fZJ"/>
                         <segue destination="WiG-nL-kLm" kind="relationship" relationship="viewControllers" id="me6-bl-Kad"/>
+                        <segue destination="hPH-AX-Kce" kind="relationship" relationship="viewControllers" id="ljp-ah-fZJ"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
