@@ -16,6 +16,8 @@ class CalculatorTableViewCell: UITableViewCell {
     func initWith(cellModel: CalculatorCellModel) {
         
         self.titleLabel.text = cellModel.type.description
+        
+        self.inputField.isEnabled = (cellModel.type != .feedRate)
         self.inputField.text = cellModel.value.stringValue
         
         self.inputField.addDoneButtonToKeyboard(myAction: #selector(self.inputField.resignFirstResponder))
