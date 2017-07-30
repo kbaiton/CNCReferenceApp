@@ -12,7 +12,7 @@ import ReactiveKit
 
 class CalculatorViewModel: NSObject {
     
-    var cellTypes = MutableObservableArray<CalculatorCellType>([])
+    var cellModels = MutableObservableArray<CalculatorCellModel>([])
     
     override init() {
         super.init()
@@ -21,10 +21,14 @@ class CalculatorViewModel: NSObject {
     }
     
     func setupBindings() {
-        self.cellTypes.append(.bitDiameter)
-        self.cellTypes.append(.chipLoad)
-        self.cellTypes.append(.spindleSpeed)
-        self.cellTypes.append(.feedRate)
-        
+        self.cellModels.append(CalculatorCellModel(type: .bitDiameter))
+        self.cellModels.append(CalculatorCellModel(type: .spindleSpeed))
+        self.cellModels.append(CalculatorCellModel(type: .chipLoad))
+        self.cellModels.append(CalculatorCellModel(type: .feedRate))
+    }
+    
+    func updateModel(value: NSNumber, IndexPath: IndexPath) {
+        let model = self.cellModels[IndexPath.row]
+        model.value = value
     }
 }

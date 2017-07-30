@@ -13,12 +13,28 @@ class CalculatorTableViewCell: UITableViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var inputField: UITextField!
     
-    func initWith(cellType: CalculatorCellType) {
+    func initWith(cellModel: CalculatorCellModel) {
         
-        self.titleLabel.text = cellType.description
+        self.titleLabel.text = cellModel.type.description
+        self.inputField.text = cellModel.value.stringValue
         
+        self.inputField.addDoneButtonToKeyboard(myAction: #selector(self.inputField.resignFirstResponder))
+    }
+    
+    func doneAction() {
+        self.inputField.endEditing(true)
     }
 
+}
+
+class CalculatorCellModel {
+    var type: CalculatorCellType
+    var value: NSNumber
+    
+    init(type: CalculatorCellType) {
+        self.type = type
+        self.value = 0
+    }
 }
 
 enum CalculatorCellType {

@@ -21,9 +21,9 @@ class CalculatorViewController: UIViewController {
     }
     
     func setupBindings() {
-        self.viewModel.cellTypes.bind(to: self.calculatorTableView) { (cellTypes, indexPath, tableView) -> UITableViewCell in
+        self.viewModel.cellModels.bind(to: self.calculatorTableView) { (cellModels, indexPath, tableView) -> UITableViewCell in
             let cell = tableView.dequeueReusableCell(withIdentifier: "CalculatorCell") as! CalculatorTableViewCell
-            cell.initWith(cellType: cellTypes[indexPath.row])
+            cell.initWith(cellModel: cellModels[indexPath.row])
             cell.inputField.delegate = self
             return cell
         }
@@ -50,16 +50,38 @@ extension CalculatorViewController: UITableViewDelegate, UITableViewDataSource {
 
 extension CalculatorViewController: UITextFieldDelegate {
     
+    func getCellForTextField(_ textField: UITextField) -> UITableViewCell? {
+        return textField.superview?.superview as? UITableViewCell
+    }
+    
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+        if (textField.text == "0") {
+            textField.text = ""
+        }
+        return true
+    }
+    
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        let result = (textField.text as NSString?)?.replacingCharacters(in: range, with: string) ?? string
+        let newString = (textField.text as NSString?)?.replacingCharacters(in: range, with: string) ?? string
+        var returnValue = false
         
         let numberFormatter = NumberFormatter()
         numberFormatter.numberStyle = .decimal
-        if numberFormatter.number(from: result) != nil {
-            return true
-        } else {
-            return false
+        let newValue = numberFormatter.number(from: newString)
+        
+        if (newValue != nil || newString == "") {
+            returnValue = true
+            //find cell model and update from input
+            if let cell = self.getCellForTextField(textField), let indexPath = self.calculatorTableView.indexPath(for: cell) {
+                self.viewModel.updateModel(value: newValue ?? 0, IndexPath: indexPath)
+            }
         }
+        
+        return returnValue
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        self.calculatorTableView.reloadData()
     }
     
     
