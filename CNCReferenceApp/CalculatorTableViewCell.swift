@@ -44,6 +44,7 @@ enum CalculatorCellType {
     case spindleSpeed
     case bitDiameter
     case chipLoad
+    case flutes
     
     var description: String {
         switch self {
@@ -55,6 +56,8 @@ enum CalculatorCellType {
             return NSLocalizedString("Bit Diameter (mm)", comment: "")
         case .chipLoad:
             return NSLocalizedString("Chip Load (???)", comment: "")
+        case .flutes:
+            return NSLocalizedString("Number of Flutes", comment: "")
         }
     }
     
