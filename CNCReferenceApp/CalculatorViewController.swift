@@ -69,7 +69,7 @@ extension CalculatorViewController: UITextFieldDelegate {
         numberFormatter.numberStyle = .decimal
         let newValue = numberFormatter.number(from: newString)
         
-        if (newValue != nil || newString == "") {
+        if (newValue != nil || newString == "" || newString == ".") {
             returnValue = true
             //find cell model and update from input
             if let cell = self.getCellForTextField(textField), let indexPath = self.calculatorTableView.indexPath(for: cell) {
@@ -81,7 +81,9 @@ extension CalculatorViewController: UITextFieldDelegate {
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
-        self.calculatorTableView.reloadData()
+        DispatchQueue.main.async {
+            self.calculatorTableView.reloadData()
+        }
     }
     
     
