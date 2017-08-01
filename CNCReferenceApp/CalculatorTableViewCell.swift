@@ -19,13 +19,10 @@ class CalculatorTableViewCell: UITableViewCell {
         
         self.inputField.isEnabled = (cellModel.type != .feedRate)
         self.inputField.text = cellModel.value.stringValue
-        
         self.inputField.addDoneButtonToKeyboard(myAction: #selector(self.inputField.resignFirstResponder))
+        
     }
     
-    func doneAction() {
-        self.inputField.endEditing(true)
-    }
 
 }
 
