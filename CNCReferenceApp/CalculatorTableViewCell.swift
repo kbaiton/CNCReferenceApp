@@ -30,12 +30,20 @@ class CalculatorTableViewCell: UITableViewCell {
 
 class CalculatorCellModel {
     var type: CalculatorCellType
+    var units: CalculatorCellUnits
     var value: NSNumber
     
     init(type: CalculatorCellType) {
         self.type = type
         self.value = 0
+        self.units = .none
     }
+}
+
+enum CalculatorCellUnits {
+    case none
+    case metric
+    case imperial
 }
 
 enum CalculatorCellType {
