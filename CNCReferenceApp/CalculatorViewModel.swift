@@ -23,8 +23,8 @@ class CalculatorViewModel: NSObject {
     func setupBindings() {
         self.cellModels.append(CalculatorCellModel(type: .bitDiameter))
         self.cellModels.append(CalculatorCellModel(type: .spindleSpeed))
-        self.cellModels.append(CalculatorCellModel(type: .chipLoad))
         self.cellModels.append(CalculatorCellModel(type: .flutes))
+        self.cellModels.append(CalculatorCellModel(type: .chipLoad))
         self.cellModels.append(CalculatorCellModel(type: .feedRate))
     }
     

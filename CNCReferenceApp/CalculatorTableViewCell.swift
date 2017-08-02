@@ -12,6 +12,7 @@ class CalculatorTableViewCell: UITableViewCell {
     
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var inputField: UITextField!
+    @IBOutlet weak var cellButton: UIButton!
     
     func initWith(cellModel: CalculatorCellModel) {
         
@@ -21,6 +22,7 @@ class CalculatorTableViewCell: UITableViewCell {
         self.inputField.text = cellModel.value.stringValue
         self.inputField.addDoneButtonToKeyboard(myAction: #selector(self.inputField.resignFirstResponder))
         
+        self.cellButton.isHidden = (cellModel.type != .chipLoad)
     }
     
 
@@ -52,7 +54,7 @@ enum CalculatorCellType {
         case .bitDiameter:
             return NSLocalizedString("Bit Diameter (mm)", comment: "")
         case .chipLoad:
-            return NSLocalizedString("Chip Load (???)", comment: "")
+            return NSLocalizedString("Chip Load", comment: "")
         case .flutes:
             return NSLocalizedString("Number of Flutes", comment: "")
         }

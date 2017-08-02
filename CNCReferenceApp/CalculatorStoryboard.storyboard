@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -22,27 +21,48 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="MMz-K5-A1y">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="54" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="MMz-K5-A1y">
                                 <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CalculatorCell" id="kYo-B5-EeJ" customClass="CalculatorTableViewCell" customModule="CNCReferenceApp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="28" width="375" height="54"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="kYo-B5-EeJ" id="cDv-6A-Y1B">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="53.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zfg-Pm-WGq">
-                                                    <rect key="frame" x="16" y="11" width="243" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
-                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3At-Xm-C2v">
-                                                    <rect key="frame" x="267" y="7" width="100" height="30"/>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="60d-dc-ogj">
+                                                    <rect key="frame" x="8" y="4" width="164" height="46"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chip Load" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zfg-Pm-WGq">
+                                                            <rect key="frame" x="0.0" y="0.0" width="80" height="22"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="22" id="fXq-fR-fuB"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mLe-8z-11C">
+                                                            <rect key="frame" x="0.0" y="22" width="164" height="24"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="22" id="HhQ-L9-J3G"/>
+                                                                <constraint firstAttribute="height" constant="24" id="kWJ-sP-QdO"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="14"/>
+                                                            <state key="normal" title="Select common chip load"/>
+                                                        </button>
+                                                    </subviews>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="100" id="xHi-37-E1T"/>
+                                                        <constraint firstItem="Zfg-Pm-WGq" firstAttribute="top" secondItem="60d-dc-ogj" secondAttribute="top" id="MaF-Xq-0cK"/>
+                                                        <constraint firstItem="Zfg-Pm-WGq" firstAttribute="leading" secondItem="60d-dc-ogj" secondAttribute="leading" id="fWd-er-opZ"/>
+                                                    </constraints>
+                                                </stackView>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3At-Xm-C2v">
+                                                    <rect key="frame" x="267" y="12" width="100" height="30"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="100" id="Nxr-Kb-O7G"/>
                                                     </constraints>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -50,14 +70,14 @@
                                                 </textField>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="Zfg-Pm-WGq" firstAttribute="centerY" secondItem="cDv-6A-Y1B" secondAttribute="centerY" id="6Rz-Ns-hh6"/>
-                                                <constraint firstItem="3At-Xm-C2v" firstAttribute="leading" secondItem="Zfg-Pm-WGq" secondAttribute="trailing" constant="8" id="Mgv-ps-0Wl"/>
-                                                <constraint firstItem="Zfg-Pm-WGq" firstAttribute="leading" secondItem="cDv-6A-Y1B" secondAttribute="leadingMargin" constant="8" id="UpJ-UG-N5C"/>
-                                                <constraint firstAttribute="trailing" secondItem="3At-Xm-C2v" secondAttribute="trailing" constant="8" id="hCb-zc-sm3"/>
-                                                <constraint firstItem="3At-Xm-C2v" firstAttribute="centerY" secondItem="cDv-6A-Y1B" secondAttribute="centerY" id="qNc-8M-2BU"/>
+                                                <constraint firstItem="60d-dc-ogj" firstAttribute="leading" secondItem="cDv-6A-Y1B" secondAttribute="leading" constant="8" id="Pqn-Yj-rcO"/>
+                                                <constraint firstItem="60d-dc-ogj" firstAttribute="centerY" secondItem="cDv-6A-Y1B" secondAttribute="centerY" id="eOm-K9-fv3"/>
+                                                <constraint firstItem="3At-Xm-C2v" firstAttribute="centerY" secondItem="cDv-6A-Y1B" secondAttribute="centerY" id="fP1-LR-jgY"/>
+                                                <constraint firstAttribute="trailing" secondItem="3At-Xm-C2v" secondAttribute="trailing" constant="8" id="jGB-QF-eRu"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="cellButton" destination="mLe-8z-11C" id="ELO-cn-oSY"/>
                                             <outlet property="inputField" destination="3At-Xm-C2v" id="HLZ-oG-9sf"/>
                                             <outlet property="titleLabel" destination="Zfg-Pm-WGq" id="lMG-bV-y0h"/>
                                         </connections>
@@ -74,7 +94,9 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Feed Calculator" image="second" id="dG5-1R-wUd"/>
-                    <navigationItem key="navigationItem" title="Feed Calculator" id="69H-dY-oEP"/>
+                    <navigationItem key="navigationItem" title="Feed Calculator" id="69H-dY-oEP">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="SaX-4l-2K1"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="calculatorTableView" destination="MMz-K5-A1y" id="qDu-1D-W32"/>
                     </connections>
