@@ -19,7 +19,7 @@ class CalculatorTableViewCell: UITableViewCell {
         self.titleLabel.text = cellModel.type.description + self.getUnitString(cellModel: cellModel)
         
         self.inputField.isEnabled = (cellModel.type != .feedRate)
-        self.inputField.text = cellModel.value.stringValue
+        self.inputField.text = cellModel.getValue(with: cellModel.units).stringValue
         self.inputField.addDoneButtonToKeyboard(myAction: #selector(self.inputField.resignFirstResponder))
         
         self.cellButton.isHidden = cellModel.type.buttonHidden
@@ -33,6 +33,7 @@ class CalculatorTableViewCell: UITableViewCell {
             return " (\(cellModel.units.description))"
         }
     }
+    
 }
 
 class CalculatorCellModel {
@@ -46,19 +47,37 @@ class CalculatorCellModel {
         self.units = units
     }
     
+    func setValue(_ value: NSNumber, valueUnits: CalculatorCellUnits) {
+        switch valueUnits {
+        case .inches, .ipm:
+            self.value = NSNumber(value: self.value.floatValue * 25.4)
+        default:
+            self.value = value
+        }
+    }
+    
+    func getValue(with units: CalculatorCellUnits) -> NSNumber {
+        if (self.units == .rpm || self.units == .none){
+            return self.value
+        }
+        
+        switch units {
+        case .inches, .ipm:
+            return NSNumber(value: self.value.floatValue * 0.03937007874)
+        default:
+            return self.value
+        }
+    }
+    
     func swapUnits() {
         if (self.units == .mm) {
             self.units = .inches
-            self.value = NSNumber(value: self.value.floatValue * 0.03937007874)
         } else if (self.units == .inches) {
             self.units = .mm
-            self.value = NSNumber(value: self.value.floatValue * 25.4)
         } else if (self.units == .mmpm) {
             self.units = .ipm
-            self.value = NSNumber(value: self.value.floatValue * 0.03937007874)
         } else if (self.units == .ipm) {
             self.units = .mmpm
-            self.value = NSNumber(value: self.value.floatValue * 25.4)
         }
     }
 }

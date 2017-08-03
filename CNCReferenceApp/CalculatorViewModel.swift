@@ -28,24 +28,16 @@ class CalculatorViewModel: NSObject {
         self.cellModels.append(CalculatorCellModel(type: .feedRate, units: .mmpm))
     }
     
-    func getValueForModelWithType(_ type: CalculatorCellType) -> NSNumber {
+    func getModelWithType(_ type: CalculatorCellType) -> CalculatorCellModel? {
         
-        var returnValue: NSNumber = 0
+        var returnValue: CalculatorCellModel?
         cellModels.forEach { (cellModel) in
             if (cellModel.type == type) {
-                returnValue = cellModel.value
+                returnValue = cellModel
             }
         }
         
         return returnValue
-    }
-    
-    func set(value: NSNumber, for type:CalculatorCellType) {
-        cellModels.forEach { (cellModel) in
-            if (cellModel.type == type) {
-                cellModel.value = value
-            }
-        }
     }
     
     func replace(cellModel: CalculatorCellModel) {
@@ -60,14 +52,14 @@ class CalculatorViewModel: NSObject {
     }
     
     func recalculateFeedRate() {
-        let flutes = self.getValueForModelWithType(.flutes)
-        let bitDiameter = self.getValueForModelWithType(.bitDiameter)
-        let spindleSpeed = self.getValueForModelWithType(.spindleSpeed)
-        let chipLoad = self.getValueForModelWithType(.chipLoad)
+        let flutes = self.getModelWithType(.flutes)?.getValue(with: .none) ?? 0
+        let bitDiameter = self.getModelWithType(.bitDiameter)?.getValue(with: .mm) ?? 0
+        let spindleSpeed = self.getModelWithType(.spindleSpeed)?.getValue(with: .rpm) ?? 0
+        let chipLoad = self.getModelWithType(.chipLoad)?.getValue(with: .none) ?? 0
         
         let feedRate = flutes.floatValue * bitDiameter.floatValue * spindleSpeed.floatValue * chipLoad.floatValue
         
-        set(value: NSNumber(value: feedRate), for: .feedRate)
+        self.getModelWithType(.feedRate)?.setValue(NSNumber(value: feedRate), valueUnits: .mmpm)
     }
     
     func changeUnits(cellModel: CalculatorCellModel) {
