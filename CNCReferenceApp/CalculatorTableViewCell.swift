@@ -16,16 +16,23 @@ class CalculatorTableViewCell: UITableViewCell {
     
     func initWith(cellModel: CalculatorCellModel) {
         
-        self.titleLabel.text = cellModel.type.description
+        self.titleLabel.text = cellModel.type.description + self.getUnitString(cellModel: cellModel)
         
         self.inputField.isEnabled = (cellModel.type != .feedRate)
         self.inputField.text = cellModel.value.stringValue
         self.inputField.addDoneButtonToKeyboard(myAction: #selector(self.inputField.resignFirstResponder))
         
-        self.cellButton.isHidden = (cellModel.type != .chipLoad)
+        self.cellButton.isHidden = cellModel.type.buttonHidden
+        self.cellButton.setTitle(cellModel.type.optionsButtonText, for: .normal)
     }
     
-
+    func getUnitString(cellModel: CalculatorCellModel) -> String {
+        if cellModel.units == .none {
+            return ""
+        } else {
+            return " (\(cellModel.units.description))"
+        }
+    }
 }
 
 class CalculatorCellModel {
@@ -33,17 +40,37 @@ class CalculatorCellModel {
     var units: CalculatorCellUnits
     var value: NSNumber
     
-    init(type: CalculatorCellType) {
+    init(type: CalculatorCellType, units: CalculatorCellUnits) {
         self.type = type
         self.value = 0
-        self.units = .none
+        self.units = units
     }
 }
 
 enum CalculatorCellUnits {
     case none
-    case metric
-    case imperial
+    case rpm
+    case mm
+    case inches
+    case mmpm
+    case ipm
+    
+    var description: String {
+        switch self {
+        case .none:
+            return ""
+        case .rpm:
+            return "RPM"
+        case .mm:
+            return "mm"
+        case .inches:
+            return "inches"
+        case .mmpm:
+            return "mm/min"
+        case .ipm:
+            return "ipm"
+        }
+    }
 }
 
 enum CalculatorCellType {
@@ -56,15 +83,37 @@ enum CalculatorCellType {
     var description: String {
         switch self {
         case .feedRate:
-            return NSLocalizedString("Feed Rate (mm/min)", comment: "")
+            return NSLocalizedString("Feed Rate", comment: "")
         case .spindleSpeed:
-            return NSLocalizedString("Spindle Speed (RPM)", comment: "")
+            return NSLocalizedString("Spindle Speed", comment: "")
         case .bitDiameter:
-            return NSLocalizedString("Bit Diameter (mm)", comment: "")
+            return NSLocalizedString("Bit Diameter", comment: "")
         case .chipLoad:
             return NSLocalizedString("Chip Load", comment: "")
         case .flutes:
             return NSLocalizedString("Number of Flutes", comment: "")
+        }
+    }
+    
+    var optionsButtonText: String {
+        switch self {
+        case .feedRate:
+            return NSLocalizedString("Change Units", comment: "")
+        case .bitDiameter:
+            return NSLocalizedString("Change Units", comment: "")
+        case .chipLoad:
+            return NSLocalizedString("Select from list", comment: "")
+        default:
+            return ""
+        }
+    }
+    
+    var buttonHidden: Bool {
+        switch self {
+        case .feedRate, .bitDiameter, .chipLoad:
+            return false
+        default:
+            return true
         }
     }
     

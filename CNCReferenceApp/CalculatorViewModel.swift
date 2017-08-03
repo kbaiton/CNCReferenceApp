@@ -21,11 +21,11 @@ class CalculatorViewModel: NSObject {
     }
     
     func setupBindings() {
-        self.cellModels.append(CalculatorCellModel(type: .bitDiameter))
-        self.cellModels.append(CalculatorCellModel(type: .spindleSpeed))
-        self.cellModels.append(CalculatorCellModel(type: .flutes))
-        self.cellModels.append(CalculatorCellModel(type: .chipLoad))
-        self.cellModels.append(CalculatorCellModel(type: .feedRate))
+        self.cellModels.append(CalculatorCellModel(type: .bitDiameter, units: .mm))
+        self.cellModels.append(CalculatorCellModel(type: .spindleSpeed, units: .rpm))
+        self.cellModels.append(CalculatorCellModel(type: .flutes, units: .none))
+        self.cellModels.append(CalculatorCellModel(type: .chipLoad, units: .none))
+        self.cellModels.append(CalculatorCellModel(type: .feedRate, units: .mmpm))
     }
     
     func getValueForModelWithType(_ type: CalculatorCellType) -> NSNumber {
