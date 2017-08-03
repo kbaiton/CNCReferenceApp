@@ -23,11 +23,20 @@ class CalculatorViewController: UIViewController {
     func setupBindings() {
         self.viewModel.cellModels.bind(to: self.calculatorTableView) { (cellModels, indexPath, tableView) -> UITableViewCell in
             let cell = tableView.dequeueReusableCell(withIdentifier: "CalculatorCell") as! CalculatorTableViewCell
-            cell.initWith(cellModel: cellModels[indexPath.row])
+            let cellModel = cellModels[indexPath.row]
+            cell.initWith(cellModel:  cellModel)
+            cell.cellButton.addTarget(self, action: #selector(self.buttonTapped), for: .touchUpInside)
             cell.inputField.delegate = self
             return cell
         }
     }
+    
+    func buttonTapped(sender: UIButton){
+        if let cell = sender.superview?.superview?.superview as? UITableViewCell, let indexPath = self.calculatorTableView.indexPath(for: cell) {
+            self.viewModel.modelOptionsButtonTapped(indexPath: indexPath)
+        }
+    }
+    
 }
 
 extension CalculatorViewController: UITableViewDelegate, UITableViewDataSource {

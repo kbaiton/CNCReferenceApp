@@ -45,6 +45,22 @@ class CalculatorCellModel {
         self.value = 0
         self.units = units
     }
+    
+    func swapUnits() {
+        if (self.units == .mm) {
+            self.units = .inches
+            self.value = NSNumber(value: self.value.floatValue * 0.03937007874)
+        } else if (self.units == .inches) {
+            self.units = .mm
+            self.value = NSNumber(value: self.value.floatValue * 25.4)
+        } else if (self.units == .mmpm) {
+            self.units = .ipm
+            self.value = NSNumber(value: self.value.floatValue * 0.03937007874)
+        } else if (self.units == .ipm) {
+            self.units = .mmpm
+            self.value = NSNumber(value: self.value.floatValue * 25.4)
+        }
+    }
 }
 
 enum CalculatorCellUnits {

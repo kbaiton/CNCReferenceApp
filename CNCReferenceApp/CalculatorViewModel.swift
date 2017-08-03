@@ -48,6 +48,17 @@ class CalculatorViewModel: NSObject {
         }
     }
     
+    func replace(cellModel: CalculatorCellModel) {
+        
+        let index = cellModels.index { (model) -> Bool in
+            model.type == cellModel.type
+        }
+        
+        guard let unwrappedIndex = index else { return }
+        
+        self.cellModels[unwrappedIndex] = cellModel
+    }
+    
     func recalculateFeedRate() {
         let flutes = self.getValueForModelWithType(.flutes)
         let bitDiameter = self.getValueForModelWithType(.bitDiameter)
@@ -59,10 +70,28 @@ class CalculatorViewModel: NSObject {
         set(value: NSNumber(value: feedRate), for: .feedRate)
     }
     
+    func changeUnits(cellModel: CalculatorCellModel) {
+        cellModel.swapUnits()
+        self.replace(cellModel: cellModel)
+    }
+    
     func updateModel(value: NSNumber, IndexPath: IndexPath) {
         let model = self.cellModels[IndexPath.row]
         model.value = value
         
         self.recalculateFeedRate()
+    }
+    
+    func modelOptionsButtonTapped(indexPath: IndexPath) {
+        let cellModel = self.cellModels[indexPath.row]
+        switch cellModel.type {
+        case .bitDiameter, .feedRate:
+            self.changeUnits(cellModel: cellModel)
+        case .chipLoad:
+            print("Show chip load list")
+    
+        default:
+            break
+        }
     }
 }
