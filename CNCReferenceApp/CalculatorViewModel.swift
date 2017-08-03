@@ -59,7 +59,11 @@ class CalculatorViewModel: NSObject {
         
         let feedRate = flutes.floatValue * bitDiameter.floatValue * spindleSpeed.floatValue * chipLoad.floatValue
         
-        self.getModelWithType(.feedRate)?.setValue(NSNumber(value: feedRate), valueUnits: .mmpm)
+        if let feedRateModel = self.getModelWithType(.feedRate) {
+            feedRateModel.setValue(NSNumber(value: feedRate), valueUnits: .mmpm)
+            self.replace(cellModel: feedRateModel)
+        }
+        
     }
     
     func changeUnits(cellModel: CalculatorCellModel) {
