@@ -32,6 +32,8 @@ class CalculatorViewController: UIViewController {
     }
     
     func buttonTapped(sender: UIButton){
+        self.view.endEditing(true)
+        
         if let cell = sender.superview?.superview?.superview as? UITableViewCell, let indexPath = self.calculatorTableView.indexPath(for: cell) {
             self.viewModel.modelOptionsButtonTapped(indexPath: indexPath)
         }
@@ -90,8 +92,9 @@ extension CalculatorViewController: UITextFieldDelegate {
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
-        DispatchQueue.main.async {
-            self.calculatorTableView.reloadData()
+        //find cell model and update from input
+        if let cell = self.getCellForTextField(textField), let indexPath = self.calculatorTableView.indexPath(for: cell) {
+            self.viewModel.formatModel(IndexPath: indexPath)
         }
     }
     

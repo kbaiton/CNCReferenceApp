@@ -78,6 +78,11 @@ class CalculatorViewModel: NSObject {
         self.recalculateFeedRate()
     }
     
+    func formatModel(IndexPath: IndexPath) {
+        let cellModel = self.cellModels[IndexPath.row]
+        self.replace(cellModel: cellModel)
+    }
+    
     func modelOptionsButtonTapped(indexPath: IndexPath) {
         let cellModel = self.cellModels[indexPath.row]
         switch cellModel.type {
