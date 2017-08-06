@@ -13,6 +13,7 @@ import ReactiveKit
 class CalculatorViewModel: NSObject {
     
     var cellModels = MutableObservableArray<CalculatorCellModel>([])
+    var chipLoadSelectionPublishSubject = SafePublishSubject<Void>()
     
     override init() {
         super.init()
@@ -66,6 +67,14 @@ class CalculatorViewModel: NSObject {
         
     }
     
+    func chipLoadSelected(value: NSNumber) {
+        if let cellModel = self.getModelWithType(.chipLoad) {
+            cellModel.value = value
+            self.replace(cellModel: cellModel)
+            self.recalculateFeedRate()
+        }
+    }
+    
     func changeUnits(cellModel: CalculatorCellModel) {
         cellModel.swapUnits()
         self.replace(cellModel: cellModel)
@@ -73,7 +82,7 @@ class CalculatorViewModel: NSObject {
     
     func updateModel(value: NSNumber, IndexPath: IndexPath) {
         let model = self.cellModels[IndexPath.row]
-        model.value = value
+        model.setValue(value, valueUnits: model.units)
         
         self.recalculateFeedRate()
     }
@@ -89,7 +98,7 @@ class CalculatorViewModel: NSObject {
         case .bitDiameter, .feedRate:
             self.changeUnits(cellModel: cellModel)
         case .chipLoad:
-            print("Show chip load list")
+            self.chipLoadSelectionPublishSubject.next()
     
         default:
             break

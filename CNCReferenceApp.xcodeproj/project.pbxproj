@@ -10,6 +10,9 @@
 		014F79EE1F2E431C00312C4C /* CalculatorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 014F79ED1F2E431C00312C4C /* CalculatorViewModel.swift */; };
 		014F79F01F2E466000312C4C /* CalculatorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 014F79EF1F2E466000312C4C /* CalculatorTableViewCell.swift */; };
 		014F79F21F2E7B0100312C4C /* UITextFieldExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 014F79F11F2E7B0100312C4C /* UITextFieldExtensions.swift */; };
+		01A9253E1F375FC100FB55A3 /* ChipLoadPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A9253D1F375FC100FB55A3 /* ChipLoadPickerViewController.swift */; };
+		01A925401F375FDE00FB55A3 /* ChipLoadPickerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A9253F1F375FDE00FB55A3 /* ChipLoadPickerViewModel.swift */; };
+		01A925421F375FF400FB55A3 /* ChipLoadPickerStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01A925411F375FF400FB55A3 /* ChipLoadPickerStoryboard.storyboard */; };
 		01E77DB91F25714200ED1EFA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E77DB81F25714200ED1EFA /* AppDelegate.swift */; };
 		01E77DC01F25714200ED1EFA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01E77DBE1F25714200ED1EFA /* Main.storyboard */; };
 		01E77DC21F25714200ED1EFA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 01E77DC11F25714200ED1EFA /* Assets.xcassets */; };
@@ -48,6 +51,9 @@
 		014F79ED1F2E431C00312C4C /* CalculatorViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalculatorViewModel.swift; sourceTree = "<group>"; };
 		014F79EF1F2E466000312C4C /* CalculatorTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalculatorTableViewCell.swift; sourceTree = "<group>"; };
 		014F79F11F2E7B0100312C4C /* UITextFieldExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITextFieldExtensions.swift; sourceTree = "<group>"; };
+		01A9253D1F375FC100FB55A3 /* ChipLoadPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChipLoadPickerViewController.swift; sourceTree = "<group>"; };
+		01A9253F1F375FDE00FB55A3 /* ChipLoadPickerViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChipLoadPickerViewModel.swift; sourceTree = "<group>"; };
+		01A925411F375FF400FB55A3 /* ChipLoadPickerStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ChipLoadPickerStoryboard.storyboard; sourceTree = "<group>"; };
 		01E77DB51F25714200ED1EFA /* CNCReferenceApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CNCReferenceApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		01E77DB81F25714200ED1EFA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		01E77DBF1F25714200ED1EFA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -111,6 +117,16 @@
 				014F79F11F2E7B0100312C4C /* UITextFieldExtensions.swift */,
 			);
 			name = Utilities;
+			sourceTree = "<group>";
+		};
+		01A9253C1F375F8F00FB55A3 /* Chip Load Picker */ = {
+			isa = PBXGroup;
+			children = (
+				01A9253D1F375FC100FB55A3 /* ChipLoadPickerViewController.swift */,
+				01A9253F1F375FDE00FB55A3 /* ChipLoadPickerViewModel.swift */,
+				01A925411F375FF400FB55A3 /* ChipLoadPickerStoryboard.storyboard */,
+			);
+			name = "Chip Load Picker";
 			sourceTree = "<group>";
 		};
 		01E77DAC1F25714200ED1EFA = {
@@ -177,6 +193,7 @@
 				014F79ED1F2E431C00312C4C /* CalculatorViewModel.swift */,
 				01E77DEF1F2573F100ED1EFA /* CalculatorViewController.swift */,
 				014F79EF1F2E466000312C4C /* CalculatorTableViewCell.swift */,
+				01A9253C1F375F8F00FB55A3 /* Chip Load Picker */,
 			);
 			name = "Calculator View";
 			sourceTree = "<group>";
@@ -346,6 +363,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				01A925421F375FF400FB55A3 /* ChipLoadPickerStoryboard.storyboard in Resources */,
 				01E77DC51F25714200ED1EFA /* LaunchScreen.storyboard in Resources */,
 				01E77DF21F25758200ED1EFA /* SavedProfilesStoryboard.storyboard in Resources */,
 				01E77DC21F25714200ED1EFA /* Assets.xcassets in Resources */,
@@ -515,11 +533,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				01E77DB91F25714200ED1EFA /* AppDelegate.swift in Sources */,
+				01A925401F375FDE00FB55A3 /* ChipLoadPickerViewModel.swift in Sources */,
 				014F79F01F2E466000312C4C /* CalculatorTableViewCell.swift in Sources */,
 				01E77DEC1F2573BA00ED1EFA /* SavedProfilesViewController.swift in Sources */,
 				01E77DF01F2573F100ED1EFA /* CalculatorViewController.swift in Sources */,
 				01E77DEE1F2573D300ED1EFA /* GCodeReferenceViewController.swift in Sources */,
 				014F79F21F2E7B0100312C4C /* UITextFieldExtensions.swift in Sources */,
+				01A9253E1F375FC100FB55A3 /* ChipLoadPickerViewController.swift in Sources */,
 				014F79EE1F2E431C00312C4C /* CalculatorViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

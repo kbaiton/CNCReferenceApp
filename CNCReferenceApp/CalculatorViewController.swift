@@ -28,7 +28,12 @@ class CalculatorViewController: UIViewController {
             cell.cellButton.addTarget(self, action: #selector(self.buttonTapped), for: .touchUpInside)
             cell.inputField.delegate = self
             return cell
-        }
+        }.dispose(in: reactive.bag)
+        
+        self.viewModel.chipLoadSelectionPublishSubject.observeNext {
+            self.showChipLoadPicker()
+        }.dispose(in: reactive.bag)
+        
     }
     
     func buttonTapped(sender: UIButton){
@@ -36,6 +41,19 @@ class CalculatorViewController: UIViewController {
         
         if let cell = sender.superview?.superview?.superview as? UITableViewCell, let indexPath = self.calculatorTableView.indexPath(for: cell) {
             self.viewModel.modelOptionsButtonTapped(indexPath: indexPath)
+        }
+    }
+    
+    func showChipLoadPicker() {
+        DispatchQueue.main.async {
+            let chipLoadPickerNav = UIStoryboard(name: "ChipLoadPickerStoryboard", bundle: nil).instantiateInitialViewController() as! UINavigationController
+            let chipLoadPickerVC = chipLoadPickerNav.topViewController as! ChipLoadPickerViewController
+
+            chipLoadPickerVC.didSelectChipLoadPublishSubject.observeNext(with: { (chipLoadValue) in
+                self.viewModel.chipLoadSelected(value: chipLoadValue)
+            }).dispose(in: chipLoadPickerVC.reactive.bag)
+            
+            self.present(chipLoadPickerNav, animated: true, completion: nil)
         }
     }
     

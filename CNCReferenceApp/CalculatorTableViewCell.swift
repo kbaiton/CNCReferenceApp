@@ -50,7 +50,7 @@ class CalculatorCellModel {
     func setValue(_ value: NSNumber, valueUnits: CalculatorCellUnits) {
         switch valueUnits {
         case .inches, .ipm:
-            self.value = NSNumber(value: self.value.floatValue * 25.4)
+            self.value = NSNumber(value: value.floatValue * 25.4)
         default:
             self.value = value
         }
