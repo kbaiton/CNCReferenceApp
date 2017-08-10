@@ -21,7 +21,7 @@ final class StyleManager {
     // MARK: - Theme
     
     static func primaryTheme() -> UIColor {
-        return FlatGrayDark()
+        return FlatNavyBlue()
     }
     
     static func theme() -> UIColor {

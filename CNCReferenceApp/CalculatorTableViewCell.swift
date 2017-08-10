@@ -18,7 +18,7 @@ class CalculatorTableViewCell: UITableViewCell {
     func initWith(cellModel: CalculatorCellModel) {
         
         self.titleLabel.text = cellModel.type.description + self.getUnitString(cellModel: cellModel)
-        self.titleLabel.textColor = FlatGrayDark()
+        self.titleLabel.textColor = FlatNavyBlue()
         
         self.inputField.isEnabled = (cellModel.type != .feedRate)
         self.inputField.text = cellModel.getValue(with: cellModel.units).stringValue

@@ -14,6 +14,7 @@
 		01A925401F375FDE00FB55A3 /* ChipLoadPickerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A9253F1F375FDE00FB55A3 /* ChipLoadPickerViewModel.swift */; };
 		01A925421F375FF400FB55A3 /* ChipLoadPickerStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01A925411F375FF400FB55A3 /* ChipLoadPickerStoryboard.storyboard */; };
 		01A925441F3BF67B00FB55A3 /* StyleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A925431F3BF67B00FB55A3 /* StyleManager.swift */; };
+		01A9254A1F3C07E000FB55A3 /* CNCTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A925491F3C07E000FB55A3 /* CNCTabBarViewController.swift */; };
 		01E77DB91F25714200ED1EFA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E77DB81F25714200ED1EFA /* AppDelegate.swift */; };
 		01E77DC01F25714200ED1EFA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01E77DBE1F25714200ED1EFA /* Main.storyboard */; };
 		01E77DC21F25714200ED1EFA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 01E77DC11F25714200ED1EFA /* Assets.xcassets */; };
@@ -56,6 +57,7 @@
 		01A9253F1F375FDE00FB55A3 /* ChipLoadPickerViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChipLoadPickerViewModel.swift; sourceTree = "<group>"; };
 		01A925411F375FF400FB55A3 /* ChipLoadPickerStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ChipLoadPickerStoryboard.storyboard; sourceTree = "<group>"; };
 		01A925431F3BF67B00FB55A3 /* StyleManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StyleManager.swift; sourceTree = "<group>"; };
+		01A925491F3C07E000FB55A3 /* CNCTabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CNCTabBarViewController.swift; sourceTree = "<group>"; };
 		01E77DB51F25714200ED1EFA /* CNCReferenceApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CNCReferenceApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		01E77DB81F25714200ED1EFA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		01E77DBF1F25714200ED1EFA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -167,6 +169,7 @@
 				01E77DC31F25714200ED1EFA /* LaunchScreen.storyboard */,
 				01E77DC61F25714200ED1EFA /* Info.plist */,
 				01A925431F3BF67B00FB55A3 /* StyleManager.swift */,
+				01A925491F3C07E000FB55A3 /* CNCTabBarViewController.swift */,
 			);
 			path = CNCReferenceApp;
 			sourceTree = "<group>";
@@ -541,6 +544,7 @@
 				01E77DEC1F2573BA00ED1EFA /* SavedProfilesViewController.swift in Sources */,
 				01E77DF01F2573F100ED1EFA /* CalculatorViewController.swift in Sources */,
 				01E77DEE1F2573D300ED1EFA /* GCodeReferenceViewController.swift in Sources */,
+				01A9254A1F3C07E000FB55A3 /* CNCTabBarViewController.swift in Sources */,
 				014F79F21F2E7B0100312C4C /* UITextFieldExtensions.swift in Sources */,
 				01A925441F3BF67B00FB55A3 /* StyleManager.swift in Sources */,
 				01A9253E1F375FC100FB55A3 /* ChipLoadPickerViewController.swift in Sources */,
