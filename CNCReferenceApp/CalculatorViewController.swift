@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import ChameleonFramework
 
 class CalculatorViewController: UIViewController {
     
@@ -16,6 +17,8 @@ class CalculatorViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.calculatorTableView.backgroundColor = FlatWhite()
         
         self.setupBindings()
     }

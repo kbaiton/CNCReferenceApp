@@ -7,6 +7,7 @@ target 'CNCReferenceApp' do
 
   # Pods for CNCReferenceApp
   pod 'Bond'
+  pod 'ChameleonFramework/Swift', :git => 'https://github.com/ViccAlexander/Chameleon.git'
 
   target 'CNCReferenceAppTests' do
     inherit! :search_paths

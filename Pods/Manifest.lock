@@ -2,17 +2,31 @@ PODS:
   - Bond (6.2.8):
     - Diff (~> 0.4)
     - ReactiveKit (~> 3.5.3)
+  - ChameleonFramework/Default (2.1.0)
+  - ChameleonFramework/Swift (2.1.0):
+    - ChameleonFramework/Default
   - Diff (0.5.3)
   - ReactiveKit (3.5.5)
 
 DEPENDENCIES:
   - Bond
+  - ChameleonFramework/Swift (from `https://github.com/ViccAlexander/Chameleon.git`)
+
+EXTERNAL SOURCES:
+  ChameleonFramework:
+    :git: https://github.com/ViccAlexander/Chameleon.git
+
+CHECKOUT OPTIONS:
+  ChameleonFramework:
+    :commit: 6dd284bde21ea2e7f9fd89bc36f40df16e16369d
+    :git: https://github.com/ViccAlexander/Chameleon.git
 
 SPEC CHECKSUMS:
   Bond: bd11b6f3dc526ab9beb1e5a1369872628b33fd36
+  ChameleonFramework: d21a3cc247abfe5e37609a283a8238b03575cf64
   Diff: befa1d19c32726b2b36ce915d98793e2fbde8dcc
   ReactiveKit: ced30f9647912f74510bd8179790cf2dfc9454c8
 
-PODFILE CHECKSUM: 2f33c9779bfcc9ae68dde640066eb31f0a838d10
+PODFILE CHECKSUM: 83f91fc9a5b06b794cb80b7ba658c641f319389b
 
 COCOAPODS: 1.2.1

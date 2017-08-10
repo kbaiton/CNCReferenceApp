@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import ChameleonFramework
 
 class CalculatorTableViewCell: UITableViewCell {
     
@@ -17,13 +18,23 @@ class CalculatorTableViewCell: UITableViewCell {
     func initWith(cellModel: CalculatorCellModel) {
         
         self.titleLabel.text = cellModel.type.description + self.getUnitString(cellModel: cellModel)
+        self.titleLabel.textColor = FlatGrayDark()
         
         self.inputField.isEnabled = (cellModel.type != .feedRate)
         self.inputField.text = cellModel.getValue(with: cellModel.units).stringValue
+        self.inputField.textColor = FlatBlack()
+        self.inputField.backgroundColor = (cellModel.type != .feedRate) ? UIColor.white : FlatWhite()
         self.inputField.addDoneButtonToKeyboard(myAction: #selector(self.inputField.resignFirstResponder))
         
         self.cellButton.isHidden = cellModel.type.buttonHidden
         self.cellButton.setTitle(cellModel.type.optionsButtonText, for: .normal)
+        
+        self.cellButton.layer.borderWidth = 1.0
+        self.cellButton.layer.cornerRadius = 5.0
+        self.cellButton.layer.borderColor = FlatSkyBlue().cgColor
+        self.cellButton.backgroundColor = FlatWhite()
+        self.cellButton.tintColor = FlatSkyBlue()
+        self.backgroundColor = FlatWhite()
     }
     
     func getUnitString(cellModel: CalculatorCellModel) -> String {
