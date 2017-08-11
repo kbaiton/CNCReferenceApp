@@ -9,6 +9,7 @@
 import UIKit
 import Bond
 import ReactiveKit
+import ChameleonFramework
 
 class ChipLoadPickerViewController: UIViewController {
     
@@ -28,6 +29,8 @@ class ChipLoadPickerViewController: UIViewController {
             let chipLoad = chipLoads[indexPath.row]
             cell.textLabel?.text = chipLoad.description
             cell.detailTextLabel?.text = chipLoad.value.stringValue
+            cell.textLabel?.textColor = FlatNavyBlue()
+            cell.detailTextLabel?.textColor = FlatNavyBlue()
             return cell
         }
     }
