@@ -32,9 +32,9 @@ class CalculatorTableViewCell: UITableViewCell {
         self.cellButton.layer.borderWidth = 1.0
         self.cellButton.layer.cornerRadius = 5.0
         self.cellButton.layer.borderColor = FlatSkyBlue().cgColor
-        self.cellButton.backgroundColor = FlatWhite()
+        self.cellButton.backgroundColor = UIColor.white
         self.cellButton.tintColor = FlatSkyBlue()
-        self.backgroundColor = FlatWhite()
+        //self.backgroundColor = FlatWhite()
     }
     
     func getUnitString(cellModel: CalculatorCellModel) -> String {

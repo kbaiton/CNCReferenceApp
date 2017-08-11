@@ -18,7 +18,7 @@ class CalculatorViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.calculatorTableView.backgroundColor = FlatWhite()
+        //self.calculatorTableView.backgroundColor = FlatWhite()
         
         self.setupBindings()
     }

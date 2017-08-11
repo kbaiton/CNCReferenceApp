@@ -85,14 +85,14 @@ extension FontType {
     var fontName: String {
         switch self {
         case .Primary:
-            return "HelveticaNeue"
+            return "Avenir"
         }
     }
     
     var fontSize: CGFloat {
         switch self {
         case .Primary:
-            return 16
+            return 17
         }
     }
 }
