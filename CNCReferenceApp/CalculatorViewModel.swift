@@ -68,6 +68,20 @@ class CalculatorViewModel: NSObject {
         
     }
     
+    func saveCurrentCalculation() {
+        var currentCalculation = SavedCalculation()
+        currentCalculation.numberOfFlutes = self.getModelWithType(.flutes)?.getValue(with: .none) ?? 0
+        currentCalculation.bitDiameter = self.getModelWithType(.bitDiameter)?.getValue(with: .mm) ?? 0
+        currentCalculation.spindleSpeed = self.getModelWithType(.spindleSpeed)?.getValue(with: .rpm) ?? 0
+        currentCalculation.chipLoad = self.getModelWithType(.chipLoad)?.getValue(with: .none) ?? 0
+        currentCalculation.feedRate = self.getModelWithType(.feedRate)?.getValue(with: .none) ?? 0
+        
+        var savedCalcs = PersistentStorageService.getSavedCalculations()
+        savedCalcs.append(currentCalculation)
+        
+        PersistentStorageService.setSavedCalculations(savedCalcs)
+    }
+    
     func chipLoadSelected(value: NSNumber) {
         if let cellModel = self.getModelWithType(.chipLoad) {
             cellModel.value = value
