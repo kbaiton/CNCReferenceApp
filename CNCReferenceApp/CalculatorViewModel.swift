@@ -68,8 +68,9 @@ class CalculatorViewModel: NSObject {
         
     }
     
-    func saveCurrentCalculation() {
-        var currentCalculation = SavedCalculation()
+    func saveCurrentCalculation(name: String) {
+        let currentCalculation = SavedCalculation()
+        currentCalculation.name = name as NSString
         currentCalculation.numberOfFlutes = self.getModelWithType(.flutes)?.getValue(with: .none) ?? 0
         currentCalculation.bitDiameter = self.getModelWithType(.bitDiameter)?.getValue(with: .mm) ?? 0
         currentCalculation.spindleSpeed = self.getModelWithType(.spindleSpeed)?.getValue(with: .rpm) ?? 0
