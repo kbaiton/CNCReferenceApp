@@ -80,6 +80,8 @@ class CalculatorViewModel: NSObject {
         var savedCalcs = PersistentStorageService.getSavedCalculations()
         savedCalcs.append(currentCalculation)
         PersistentStorageService.setSavedCalculations(savedCalcs)
+        
+        NotificationCenter.default.post(name: Notification.Name(rawValue: "CalulationSavedNotification"), object: self)
     }
     
     func chipLoadSelected(value: NSNumber) {

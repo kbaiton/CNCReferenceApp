@@ -16,17 +16,19 @@ class SavedProfilesViewModel: NSObject {
     
     override init() {
         super.init()
-        
+    
         self.loadSavedCalculations()
         self.setupBindings()
     }
     
     func loadSavedCalculations() {
+
+        
         self.savedCalculations.replace(with: PersistentStorageService.getSavedCalculations())
     }
     
     func setupBindings() {
-        
+        NotificationCenter.default.addObserver(self, selector: #selector(self.loadSavedCalculations), name: NSNotification.Name(rawValue: "CalulationSavedNotification"), object: nil)
     }
 
 }
