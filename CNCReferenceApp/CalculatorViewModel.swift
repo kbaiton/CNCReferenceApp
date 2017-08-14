@@ -79,7 +79,6 @@ class CalculatorViewModel: NSObject {
         
         var savedCalcs = PersistentStorageService.getSavedCalculations()
         savedCalcs.append(currentCalculation)
-        
         PersistentStorageService.setSavedCalculations(savedCalcs)
     }
     

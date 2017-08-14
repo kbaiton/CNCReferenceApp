@@ -36,6 +36,7 @@ class CalculatorViewController: UIViewController {
         alert.addAction(UIAlertAction(title: "Save", style: .default, handler: { [weak alert] (_) in
             if let input = alert?.textFields?[0].text {
                 print(input)
+                self.viewModel.saveCurrentCalculation(name: input)
                 self.tabBarController?.selectedIndex = 1
             }
         }))
