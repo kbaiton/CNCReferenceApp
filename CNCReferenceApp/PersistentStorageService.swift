@@ -11,11 +11,15 @@ import Foundation
 class PersistentStorageService {
     
     static func getSavedCalculations() -> [SavedCalculation] {
+        if let savedCalculations = NSKeyedUnarchiver.unarchiveObject(withFile: "SavedCalculations") as? [SavedCalculation] {
+            return savedCalculations
+        }
+        
         return []
     }
     
     static func setSavedCalculations(_ calculations: [SavedCalculation]) {
-        //implement save
+        NSKeyedArchiver.archiveRootObject(calculations, toFile: "SavedCalculations")
     }
     
 }
