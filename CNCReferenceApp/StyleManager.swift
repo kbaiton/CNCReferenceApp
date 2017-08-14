@@ -16,6 +16,8 @@ final class StyleManager {
     
     static func setUpTheme() {
         Chameleon.setGlobalThemeUsingPrimaryColor(primaryTheme(), withSecondaryColor: theme(), usingFontName: font(), andContentStyle: content())
+        UIButton.appearance(whenContainedInInstancesOf: [UITableView.self]).backgroundColor = UIColor.clear
+        
     }
     
     // MARK: - Theme

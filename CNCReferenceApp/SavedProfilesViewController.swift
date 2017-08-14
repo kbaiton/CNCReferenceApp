@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import ChameleonFramework
+import Bond
+import ReactiveKit
 
 class SavedProfilesViewController: UIViewController {
     
@@ -20,6 +23,15 @@ class SavedProfilesViewController: UIViewController {
     }
     
     func setupBindings() {
+        
+        self.viewModel.savedCalculations.bind(to: self.savedCalculationsTable) { (savedCalculations, indexPath, tableView) -> UITableViewCell in
+            let cell = tableView.dequeueReusableCell(withIdentifier: "SavedCalculationCell")!
+            let savedCalculation = savedCalculations[indexPath.row]
+            cell.textLabel?.text = savedCalculation.name.length > 0 ? savedCalculation.name as String : "Saved Calculation"
+            cell.textLabel?.textColor = FlatNavyBlue()
+            cell.detailTextLabel?.textColor = FlatNavyBlue()
+            return cell
+            }.dispose(in: reactive.bag)
         
     }
 }

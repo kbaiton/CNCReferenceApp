@@ -12,10 +12,17 @@ import ReactiveKit
 
 class SavedProfilesViewModel: NSObject {
     
+    var savedCalculations = MutableObservableArray<SavedCalculation>([])
+    
     override init() {
         super.init()
         
+        self.loadSavedCalculations()
         self.setupBindings()
+    }
+    
+    func loadSavedCalculations() {
+        self.savedCalculations.replace(with: PersistentStorageService.getSavedCalculations())
     }
     
     func setupBindings() {
