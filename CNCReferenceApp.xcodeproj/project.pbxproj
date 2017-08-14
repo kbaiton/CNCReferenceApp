@@ -706,7 +706,7 @@
 				DEVELOPMENT_TEAM = 4384X88AAP;
 				INFOPLIST_FILE = CNCReferenceApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.KaleBaiton.EasyCNC;
+				PRODUCT_BUNDLE_IDENTIFIER = com.KaleBaiton.CNCSidekick;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -720,7 +720,7 @@
 				DEVELOPMENT_TEAM = 4384X88AAP;
 				INFOPLIST_FILE = CNCReferenceApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.KaleBaiton.EasyCNC;
+				PRODUCT_BUNDLE_IDENTIFIER = com.KaleBaiton.CNCSidekick;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};

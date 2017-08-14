@@ -91,7 +91,11 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Feed Calculator" image="second" id="dG5-1R-wUd"/>
                     <navigationItem key="navigationItem" title="Feed Rate Calculator" id="69H-dY-oEP">
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="SaX-4l-2K1"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="SaX-4l-2K1">
+                            <connections>
+                                <action selector="didTapSave:" destination="UzY-65-nCS" id="VQc-ae-8IV"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="calculatorTableView" destination="MMz-K5-A1y" id="qDu-1D-W32"/>

@@ -38,8 +38,6 @@ class ChipLoadPickerViewController: UIViewController {
     @IBAction func didTapCancel(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
-    
-    
 }
 
 extension ChipLoadPickerViewController: UITableViewDelegate, UITableViewDataSource {

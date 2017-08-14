@@ -23,6 +23,28 @@ class CalculatorViewController: UIViewController {
         self.setupBindings()
     }
     
+    @IBAction func didTapSave(_ sender: Any) {
+        //1. Create the alert controller.
+        let alert = UIAlertController(title: "Enter a name for your calculation", message: "", preferredStyle: .alert)
+        
+        //2. Add the text field. You can configure it however you need.
+        alert.addTextField { (textField) in
+            textField.text = ""
+        }
+        
+        // 3. Grab the value from the text field, and print it when the user clicks OK.
+        alert.addAction(UIAlertAction(title: "Save", style: .default, handler: { [weak alert] (_) in
+            if let input = alert?.textFields?[0].text {
+                print(input)
+                self.tabBarController?.selectedIndex = 1
+            }
+        }))
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        
+        // 4. Present the alert.
+        self.present(alert, animated: true, completion: nil)
+    }
+    
     func setupBindings() {
         self.viewModel.cellModels.bind(to: self.calculatorTableView) { (cellModels, indexPath, tableView) -> UITableViewCell in
             let cell = tableView.dequeueReusableCell(withIdentifier: "CalculatorCell") as! CalculatorTableViewCell
@@ -39,7 +61,7 @@ class CalculatorViewController: UIViewController {
         
     }
     
-    func buttonTapped(sender: UIButton){
+    func buttonTapped(sender: UIButton) {
         self.view.endEditing(true)
         
         if let cell = sender.superview?.superview?.superview as? UITableViewCell, let indexPath = self.calculatorTableView.indexPath(for: cell) {
