@@ -17,6 +17,7 @@
 		01A9254A1F3C07E000FB55A3 /* CNCTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A925491F3C07E000FB55A3 /* CNCTabBarViewController.swift */; };
 		01D446801F421C0500BC363C /* SavedProfilesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D4467F1F421C0500BC363C /* SavedProfilesViewModel.swift */; };
 		01D446821F42248600BC363C /* SavedCalculation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D446811F42248600BC363C /* SavedCalculation.swift */; };
+		01D446841F42274E00BC363C /* PersistentStorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D446831F42274E00BC363C /* PersistentStorageService.swift */; };
 		01E77DB91F25714200ED1EFA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E77DB81F25714200ED1EFA /* AppDelegate.swift */; };
 		01E77DC01F25714200ED1EFA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01E77DBE1F25714200ED1EFA /* Main.storyboard */; };
 		01E77DC21F25714200ED1EFA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 01E77DC11F25714200ED1EFA /* Assets.xcassets */; };
@@ -62,6 +63,7 @@
 		01A925491F3C07E000FB55A3 /* CNCTabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CNCTabBarViewController.swift; sourceTree = "<group>"; };
 		01D4467F1F421C0500BC363C /* SavedProfilesViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SavedProfilesViewModel.swift; sourceTree = "<group>"; };
 		01D446811F42248600BC363C /* SavedCalculation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SavedCalculation.swift; sourceTree = "<group>"; };
+		01D446831F42274E00BC363C /* PersistentStorageService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersistentStorageService.swift; sourceTree = "<group>"; };
 		01E77DB51F25714200ED1EFA /* CNCReferenceApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CNCReferenceApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		01E77DB81F25714200ED1EFA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		01E77DBF1F25714200ED1EFA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -123,6 +125,7 @@
 			isa = PBXGroup;
 			children = (
 				014F79F11F2E7B0100312C4C /* UITextFieldExtensions.swift */,
+				01D446831F42274E00BC363C /* PersistentStorageService.swift */,
 			);
 			name = Utilities;
 			sourceTree = "<group>";
@@ -548,6 +551,7 @@
 				01D446821F42248600BC363C /* SavedCalculation.swift in Sources */,
 				01A925401F375FDE00FB55A3 /* ChipLoadPickerViewModel.swift in Sources */,
 				014F79F01F2E466000312C4C /* CalculatorTableViewCell.swift in Sources */,
+				01D446841F42274E00BC363C /* PersistentStorageService.swift in Sources */,
 				01E77DEC1F2573BA00ED1EFA /* SavedProfilesViewController.swift in Sources */,
 				01E77DF01F2573F100ED1EFA /* CalculatorViewController.swift in Sources */,
 				01E77DEE1F2573D300ED1EFA /* GCodeReferenceViewController.swift in Sources */,
