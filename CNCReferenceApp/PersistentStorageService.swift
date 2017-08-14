@@ -10,8 +10,15 @@ import Foundation
 
 class PersistentStorageService {
     
+    static func savedCalculationFilePath() -> String {
+        guard let url = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else { return "" }
+        return url.appendingPathComponent("SavedCalculations").path
+    }
+    
     static func getSavedCalculations() -> [SavedCalculation] {
-        if let savedCalculations = NSKeyedUnarchiver.unarchiveObject(withFile: "SavedCalculations") as? [SavedCalculation] {
+        
+        
+        if let savedCalculations = NSKeyedUnarchiver.unarchiveObject(withFile: self.savedCalculationFilePath()) as? [SavedCalculation] {
             return savedCalculations
         }
         
@@ -19,7 +26,7 @@ class PersistentStorageService {
     }
     
     static func setSavedCalculations(_ calculations: [SavedCalculation]) {
-        NSKeyedArchiver.archiveRootObject(calculations, toFile: "SavedCalculations")
+        NSKeyedArchiver.archiveRootObject(calculations, toFile: self.savedCalculationFilePath())
     }
     
 }

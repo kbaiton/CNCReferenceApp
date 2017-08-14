@@ -19,6 +19,7 @@ class CalculatorViewModel: NSObject {
         super.init()
         
         self.setupBindings()
+        
     }
     
     func setupBindings() {
