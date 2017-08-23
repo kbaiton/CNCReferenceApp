@@ -23,11 +23,44 @@ class CalculatorViewModel: NSObject {
     }
     
     func setupBindings() {
+        NotificationCenter.default.addObserver(self, selector: #selector(self.openSavedCalculation(_:)), name: NSNotification.Name(rawValue: "OpenCalculationNotification"), object: nil)
+        
         self.cellModels.append(CalculatorCellModel(type: .bitDiameter, units: .mm))
         self.cellModels.append(CalculatorCellModel(type: .spindleSpeed, units: .rpm))
         self.cellModels.append(CalculatorCellModel(type: .flutes, units: .none))
         self.cellModels.append(CalculatorCellModel(type: .chipLoad, units: .none))
         self.cellModels.append(CalculatorCellModel(type: .feedRate, units: .mmpm))
+    }
+    
+    func openSavedCalculation(_ notification: NSNotification) {
+        
+        if let savedCalculation = notification.userInfo?["Calculation"] as? SavedCalculation {
+            
+            if let bitDiameterModel = self.getModelWithType(.bitDiameter) {
+                bitDiameterModel.setValue(savedCalculation.bitDiameter, valueUnits: .mm)
+                self.replace(cellModel: bitDiameterModel)
+            }
+            
+            if let spindleSpeedModel = self.getModelWithType(.spindleSpeed) {
+                spindleSpeedModel.setValue(savedCalculation.spindleSpeed, valueUnits: .rpm)
+                self.replace(cellModel: spindleSpeedModel)
+            }
+            
+            if let flutesModel = self.getModelWithType(.flutes) {
+                flutesModel.setValue(savedCalculation.numberOfFlutes, valueUnits: .none)
+                self.replace(cellModel: flutesModel)
+            }
+            
+            if let chipLoadModel = self.getModelWithType(.chipLoad) {
+                chipLoadModel.setValue(savedCalculation.chipLoad, valueUnits: .none)
+                self.replace(cellModel: chipLoadModel)
+            }
+            
+            if let feedRateModel = self.getModelWithType(.feedRate) {
+                feedRateModel.setValue(savedCalculation.feedRate, valueUnits: .mmpm)
+                self.replace(cellModel: feedRateModel)
+            }
+        }
     }
     
     func getModelWithType(_ type: CalculatorCellType) -> CalculatorCellModel? {

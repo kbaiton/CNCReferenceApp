@@ -30,5 +30,12 @@ class SavedProfilesViewModel: NSObject {
     func setupBindings() {
         NotificationCenter.default.addObserver(self, selector: #selector(self.loadSavedCalculations), name: NSNotification.Name(rawValue: "CalulationSavedNotification"), object: nil)
     }
+    
+    func openCalculationinCalculator(indexPath: IndexPath) {
+        let openCalc = savedCalculations[indexPath.row]
+        let openCalcDict:[String: SavedCalculation] = ["Calculation": openCalc]
+        
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "OpenCalculationNotification"), object: nil, userInfo: openCalcDict)
+    }
 
 }

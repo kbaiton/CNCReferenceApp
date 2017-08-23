@@ -50,7 +50,9 @@ extension SavedProfilesViewController: UITableViewDelegate, UITableViewDataSourc
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //do something with selected row
+        tableView.deselectRow(at: indexPath, animated: true)
+        self.viewModel.openCalculationinCalculator(indexPath: indexPath)
+        self.tabBarController?.selectedIndex = 0
     }
 }
 
