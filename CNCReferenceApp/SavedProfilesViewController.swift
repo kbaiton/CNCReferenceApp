@@ -24,6 +24,9 @@ class SavedProfilesViewController: UIViewController {
     
     func setupBindings() {
         
+        self.savedCalculationsTable.reactive.delegate.forwardTo = self
+        self.savedCalculationsTable.reactive.dataSource.forwardTo = self
+        
         self.viewModel.savedCalculations.bind(to: self.savedCalculationsTable) { (savedCalculations, indexPath, tableView) -> UITableViewCell in
             let cell = tableView.dequeueReusableCell(withIdentifier: "SavedCalculationCell")!
             let savedCalculation = savedCalculations[indexPath.row]
@@ -31,7 +34,7 @@ class SavedProfilesViewController: UIViewController {
             cell.textLabel?.textColor = FlatNavyBlue()
             cell.detailTextLabel?.textColor = FlatNavyBlue()
             return cell
-            }.dispose(in: reactive.bag)
+        }.dispose(in: reactive.bag)
         
     }
 }
@@ -53,6 +56,14 @@ extension SavedProfilesViewController: UITableViewDelegate, UITableViewDataSourc
         tableView.deselectRow(at: indexPath, animated: true)
         self.viewModel.openCalculationinCalculator(indexPath: indexPath)
         self.tabBarController?.selectedIndex = 0
+    }
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        print("delete pls")
     }
 }
 
