@@ -63,7 +63,7 @@ extension SavedProfilesViewController: UITableViewDelegate, UITableViewDataSourc
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        print("delete pls")
+        self.viewModel.deleteSavedCalculation(indexPath: indexPath)
     }
 }
 

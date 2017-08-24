@@ -37,5 +37,10 @@ class SavedProfilesViewModel: NSObject {
         
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "OpenCalculationNotification"), object: nil, userInfo: openCalcDict)
     }
+    
+    func deleteSavedCalculation(indexPath: IndexPath) {
+        self.savedCalculations.remove(at: indexPath.row)
+        PersistentStorageService.setSavedCalculations(self.savedCalculations.array)
+    }
 
 }
