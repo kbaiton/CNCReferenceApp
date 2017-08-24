@@ -30,6 +30,7 @@
 		01E77DF21F25758200ED1EFA /* SavedProfilesStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01E77DF11F25758200ED1EFA /* SavedProfilesStoryboard.storyboard */; };
 		01E77DF41F25759300ED1EFA /* GCodeReferenceStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01E77DF31F25759300ED1EFA /* GCodeReferenceStoryboard.storyboard */; };
 		01E77DF61F2575AF00ED1EFA /* CalculatorStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01E77DF51F2575AF00ED1EFA /* CalculatorStoryboard.storyboard */; };
+		01F78C2C1F4F12C100489151 /* CNCValueNumberFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F78C2B1F4F12C100489151 /* CNCValueNumberFormatter.swift */; };
 		3AB37FC8DDF7FA5F51E87A82 /* Pods_CNCReferenceAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13DE49ADCCFC1BD8ACCFC878 /* Pods_CNCReferenceAppUITests.framework */; };
 		976C8F4D4859F00BCD29B2EE /* Pods_CNCReferenceAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9CC1D0DE1279DF8515E8AEF /* Pods_CNCReferenceAppTests.framework */; };
 		E27F2C650A5EAB67318B1A09 /* Pods_CNCReferenceApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D45FFF0C4853E2E2FF12653F /* Pods_CNCReferenceApp.framework */; };
@@ -82,6 +83,7 @@
 		01E77DF11F25758200ED1EFA /* SavedProfilesStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SavedProfilesStoryboard.storyboard; sourceTree = "<group>"; };
 		01E77DF31F25759300ED1EFA /* GCodeReferenceStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = GCodeReferenceStoryboard.storyboard; sourceTree = "<group>"; };
 		01E77DF51F2575AF00ED1EFA /* CalculatorStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CalculatorStoryboard.storyboard; sourceTree = "<group>"; };
+		01F78C2B1F4F12C100489151 /* CNCValueNumberFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CNCValueNumberFormatter.swift; sourceTree = "<group>"; };
 		13DE49ADCCFC1BD8ACCFC878 /* Pods_CNCReferenceAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CNCReferenceAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FA588AC53CBE1CE7366155F /* Pods-CNCReferenceApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CNCReferenceApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CNCReferenceApp/Pods-CNCReferenceApp.debug.xcconfig"; sourceTree = "<group>"; };
 		836A64CDD17335E9640EF5E4 /* Pods-CNCReferenceApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CNCReferenceApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-CNCReferenceApp/Pods-CNCReferenceApp.release.xcconfig"; sourceTree = "<group>"; };
@@ -126,6 +128,7 @@
 			children = (
 				014F79F11F2E7B0100312C4C /* UITextFieldExtensions.swift */,
 				01D446831F42274E00BC363C /* PersistentStorageService.swift */,
+				01F78C2B1F4F12C100489151 /* CNCValueNumberFormatter.swift */,
 			);
 			name = Utilities;
 			sourceTree = "<group>";
@@ -549,6 +552,7 @@
 			files = (
 				01E77DB91F25714200ED1EFA /* AppDelegate.swift in Sources */,
 				01D446821F42248600BC363C /* SavedCalculation.swift in Sources */,
+				01F78C2C1F4F12C100489151 /* CNCValueNumberFormatter.swift in Sources */,
 				01A925401F375FDE00FB55A3 /* ChipLoadPickerViewModel.swift in Sources */,
 				014F79F01F2E466000312C4C /* CalculatorTableViewCell.swift in Sources */,
 				01D446841F42274E00BC363C /* PersistentStorageService.swift in Sources */,

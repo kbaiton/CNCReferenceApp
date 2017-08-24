@@ -28,7 +28,7 @@ class ChipLoadPickerViewController: UIViewController {
             let cell = tableView.dequeueReusableCell(withIdentifier: "ChipLoadCell")!
             let chipLoad = chipLoads[indexPath.row]
             cell.textLabel?.text = chipLoad.description
-            cell.detailTextLabel?.text = chipLoad.value.stringValue
+            cell.detailTextLabel?.text = CNCValueNumberFormatter.defaultFormatter.string(from: chipLoad.value)
             cell.textLabel?.textColor = FlatNavyBlue()
             cell.detailTextLabel?.textColor = FlatNavyBlue()
             return cell

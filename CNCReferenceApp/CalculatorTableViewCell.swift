@@ -21,7 +21,7 @@ class CalculatorTableViewCell: UITableViewCell {
         self.titleLabel.textColor = FlatNavyBlue()
         
         self.inputField.isEnabled = (cellModel.type != .feedRate)
-        self.inputField.text = cellModel.getValue(with: cellModel.units).stringValue
+        self.inputField.text = CNCValueNumberFormatter.defaultFormatter.string(from: cellModel.getValue(with: cellModel.units))
         self.inputField.textColor = FlatBlack()
         self.inputField.backgroundColor = (cellModel.type != .feedRate) ? UIColor.white : FlatWhite()
         self.inputField.addDoneButtonToKeyboard(myAction: #selector(self.inputField.resignFirstResponder))
