@@ -22,7 +22,7 @@
 		01E77DC01F25714200ED1EFA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01E77DBE1F25714200ED1EFA /* Main.storyboard */; };
 		01E77DC21F25714200ED1EFA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 01E77DC11F25714200ED1EFA /* Assets.xcassets */; };
 		01E77DC51F25714200ED1EFA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01E77DC31F25714200ED1EFA /* LaunchScreen.storyboard */; };
-		01E77DD01F25714200ED1EFA /* CNCReferenceAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E77DCF1F25714200ED1EFA /* CNCReferenceAppTests.swift */; };
+		01E77DD01F25714200ED1EFA /* CalculatorViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E77DCF1F25714200ED1EFA /* CalculatorViewModelTests.swift */; };
 		01E77DDB1F25714200ED1EFA /* CNCReferenceAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E77DDA1F25714200ED1EFA /* CNCReferenceAppUITests.swift */; };
 		01E77DEC1F2573BA00ED1EFA /* SavedProfilesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E77DEB1F2573BA00ED1EFA /* SavedProfilesViewController.swift */; };
 		01E77DEE1F2573D300ED1EFA /* GCodeReferenceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E77DED1F2573D300ED1EFA /* GCodeReferenceViewController.swift */; };
@@ -72,7 +72,7 @@
 		01E77DC41F25714200ED1EFA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		01E77DC61F25714200ED1EFA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		01E77DCB1F25714200ED1EFA /* CNCReferenceAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CNCReferenceAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		01E77DCF1F25714200ED1EFA /* CNCReferenceAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CNCReferenceAppTests.swift; sourceTree = "<group>"; };
+		01E77DCF1F25714200ED1EFA /* CalculatorViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorViewModelTests.swift; sourceTree = "<group>"; };
 		01E77DD11F25714200ED1EFA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		01E77DD61F25714200ED1EFA /* CNCReferenceAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CNCReferenceAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		01E77DDA1F25714200ED1EFA /* CNCReferenceAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CNCReferenceAppUITests.swift; sourceTree = "<group>"; };
@@ -187,7 +187,7 @@
 		01E77DCE1F25714200ED1EFA /* CNCReferenceAppTests */ = {
 			isa = PBXGroup;
 			children = (
-				01E77DCF1F25714200ED1EFA /* CNCReferenceAppTests.swift */,
+				01E77DCF1F25714200ED1EFA /* CalculatorViewModelTests.swift */,
 				01E77DD11F25714200ED1EFA /* Info.plist */,
 			);
 			path = CNCReferenceAppTests;
@@ -572,7 +572,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				01E77DD01F25714200ED1EFA /* CNCReferenceAppTests.swift in Sources */,
+				01E77DD01F25714200ED1EFA /* CalculatorViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
