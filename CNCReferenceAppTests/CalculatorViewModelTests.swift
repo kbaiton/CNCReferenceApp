@@ -33,4 +33,12 @@ class CalculatorViewModelTests: XCTestCase {
         XCTAssert(sut.cellModels.array.contains(where: { $0.type == .feedRate }))
     }
     
+    func testGetModelOfType() {
+        XCTAssert(sut.getModelWithType(.bitDiameter)?.type == .bitDiameter)
+        XCTAssert(sut.getModelWithType(.spindleSpeed)?.type == .spindleSpeed)
+        XCTAssert(sut.getModelWithType(.flutes)?.type == .flutes)
+        XCTAssert(sut.getModelWithType(.chipLoad)?.type == .chipLoad)
+        XCTAssert(sut.getModelWithType(.feedRate)?.type == .feedRate)
+    }
+    
 }
