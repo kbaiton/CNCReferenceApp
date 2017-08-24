@@ -13,7 +13,7 @@ class CNCValueNumberFormatter {
     class var defaultFormatter: NumberFormatter {
         get {
             let formatter = NumberFormatter()
-            formatter.maximumFractionDigits = 8
+            formatter.maximumFractionDigits = 6
             return formatter
         }
     }
