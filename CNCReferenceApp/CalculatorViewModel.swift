@@ -66,7 +66,7 @@ class CalculatorViewModel: NSObject {
     func getModelWithType(_ type: CalculatorCellType) -> CalculatorCellModel? {
         
         var returnValue: CalculatorCellModel?
-        cellModels.forEach { (cellModel) in
+        cellModels.array.forEach { (cellModel) in
             if (cellModel.type == type) {
                 returnValue = cellModel
             }
@@ -77,7 +77,7 @@ class CalculatorViewModel: NSObject {
     
     func replace(cellModel: CalculatorCellModel) {
         
-        let index = cellModels.index { (model) -> Bool in
+        let index = cellModels.array.index { (model) -> Bool in
             model.type == cellModel.type
         }
         

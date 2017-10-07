@@ -6,7 +6,7 @@ target 'CNCReferenceApp' do
   use_frameworks!
 
   # Pods for CNCReferenceApp
-  pod 'Bond'
+  pod 'Bond', '~> 6.3.0'
   pod 'ChameleonFramework/Swift', :git => 'https://github.com/ViccAlexander/Chameleon.git'
 
   target 'CNCReferenceAppTests' do
