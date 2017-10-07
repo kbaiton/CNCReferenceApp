@@ -20,6 +20,9 @@ class ChipLoadPickerViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.navigationController?.navigationBar.largeTitleTextAttributes = [ NSAttributedStringKey.font: UIFont(name: "Avenir Heavy", size: 26)!, NSAttributedStringKey.foregroundColor: UIColor.white]
+        
         self.setupBindings()
     }
     

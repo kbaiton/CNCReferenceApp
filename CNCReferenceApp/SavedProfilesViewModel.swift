@@ -21,9 +21,8 @@ class SavedProfilesViewModel: NSObject {
         self.setupBindings()
     }
     
-    func loadSavedCalculations() {
+    @objc func loadSavedCalculations() {
 
-        
         self.savedCalculations.replace(with: PersistentStorageService.getSavedCalculations())
     }
     

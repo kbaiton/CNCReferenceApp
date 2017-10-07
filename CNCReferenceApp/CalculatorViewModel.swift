@@ -32,7 +32,7 @@ class CalculatorViewModel: NSObject {
         self.cellModels.append(CalculatorCellModel(type: .feedRate, units: .mmpm))
     }
     
-    func openSavedCalculation(_ notification: NSNotification) {
+    @objc func openSavedCalculation(_ notification: NSNotification) {
         
         if let savedCalculation = notification.userInfo?["Calculation"] as? SavedCalculation {
             
@@ -148,7 +148,7 @@ class CalculatorViewModel: NSObject {
         case .bitDiameter, .feedRate:
             self.changeUnits(cellModel: cellModel)
         case .chipLoad:
-            self.chipLoadSelectionPublishSubject.next()
+            self.chipLoadSelectionPublishSubject.next(())
     
         default:
             break

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Foundation
 import ChameleonFramework
 
 class CalculatorViewController: UIViewController {
@@ -18,7 +19,7 @@ class CalculatorViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //self.calculatorTableView.backgroundColor = FlatWhite()
+        self.navigationController?.navigationBar.largeTitleTextAttributes = [ NSAttributedStringKey.font: UIFont(name: "Avenir Heavy", size: 26)!, NSAttributedStringKey.foregroundColor: UIColor.white]
         
         self.setupBindings()
     }
@@ -62,7 +63,7 @@ class CalculatorViewController: UIViewController {
         
     }
     
-    func buttonTapped(sender: UIButton) {
+    @objc func buttonTapped(sender: UIButton) {
         self.view.endEditing(true)
         
         if let cell = sender.superview?.superview?.superview as? UITableViewCell, let indexPath = self.calculatorTableView.indexPath(for: cell) {
