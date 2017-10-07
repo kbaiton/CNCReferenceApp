@@ -57,7 +57,7 @@
                             <constraint firstItem="egP-Qx-SVF" firstAttribute="top" secondItem="Vdv-ad-dsd" secondAttribute="bottom" id="khW-Oe-Yed"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Saved Calculations" image="second" id="rrJ-n0-uje"/>
+                    <tabBarItem key="tabBarItem" title="Saved Calculations" image="save-icon" id="rrJ-n0-uje"/>
                     <navigationItem key="navigationItem" title="Saved Calculations" id="f0y-gx-qtU"/>
                     <connections>
                         <outlet property="savedCalculationsTable" destination="egP-Qx-SVF" id="mOJ-cI-H1x"/>
@@ -86,6 +86,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="second" width="30" height="30"/>
+        <image name="save-icon" width="32" height="32"/>
     </resources>
 </document>

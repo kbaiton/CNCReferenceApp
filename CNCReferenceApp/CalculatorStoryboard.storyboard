@@ -89,7 +89,7 @@
                             <constraint firstAttribute="trailing" secondItem="MMz-K5-A1y" secondAttribute="trailing" id="Wkt-46-Duu"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Feed Calculator" image="second" id="dG5-1R-wUd"/>
+                    <tabBarItem key="tabBarItem" title="Feed Calculator" image="calculator-icon" id="dG5-1R-wUd"/>
                     <navigationItem key="navigationItem" title="Feed Rate Calculator" id="69H-dY-oEP">
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="SaX-4l-2K1">
                             <connections>
@@ -128,6 +128,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="second" width="30" height="30"/>
+        <image name="calculator-icon" width="32" height="32"/>
     </resources>
 </document>
